@@ -6,11 +6,24 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
+import { useEffect } from "react";
+import ReactPaginate from "react-paginate";
+import { click } from "@testing-library/user-event/dist/click";
+import { event } from "jquery";
+import { current } from "@reduxjs/toolkit";
+
 function Category() {
   const [category, setCategory] = useState(1);
   const path = useParams();
   const [showFilter, setShowFilter] = useState(false);
   const [sort, setSort] = useState("asc");
+
+  const [choosePage, setChoosePage] = useState(0);
+  const itemPerPage = 9;
+
+  const handlePageClick = (event) => {
+    setChoosePage(event.selected);
+  };
 
   // const data = [
   //   {
@@ -659,9 +672,18 @@ function Category() {
     },
   ];
   const filterData = data.filter((item) => item.categoryId === category);
+  let offsetStartItem = choosePage * itemPerPage;
+  let offsetEndItem = offsetStartItem + itemPerPage;
+  let currentItems = filterData.slice(offsetStartItem, offsetEndItem);
+
+  const pageCount = Math.ceil(filterData.length / itemPerPage);
   return (
     <Fragment>
-      <Banner pageTitle={"category"}></Banner>
+      <Banner
+        pageTitle={
+          categories.find((item) => item.categoryId === category).categoryName
+        }
+      ></Banner>
       <div className="row mx-0 d-flex justify-content-center my-3">
         <div className="col-10">
           <div className="row mx-0">
@@ -681,6 +703,7 @@ function Category() {
                         key={index}
                         onClick={() => {
                           setCategory(item.categoryId);
+                          setChoosePage(0);
                         }}
                       >
                         <div className="link-group">
@@ -773,10 +796,23 @@ function Category() {
                 </div>
               </div>
               <div className="my-category-product row row-cols-3">
-                {filterData.map((item, index) => (
+                {currentItems.map((item, index) => (
                   <ProductCard item={item} key={index} />
                 ))}
               </div>
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel="next >"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={5}
+                pageCount={pageCount}
+                previousLabel="< previous"
+                renderOnZeroPageCount={null}
+                className="d-flex justify-content-between p-2 bg-light"
+                pageClassName="p-2 rounded bg-primary text-decoration-none list-group-item"
+                previousClassName="p-2 rounded text-decoration-none list-group-item text text-danger"
+                nextClassName="p-2 rounded text-decoration-none list-group-item text text-danger"
+              />
             </div>
           </div>
         </div>
