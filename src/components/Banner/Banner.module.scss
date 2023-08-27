@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .background {
+    object-fit: contain;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 400px;
+    }
+  }
+  .page_info {
+    position: absolute;
+    color: white;
+    text-align: center;
+    .title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 999;
+    background-color: #fff;
+
+    .logo_group {
+      display: flex;
+      align-items: center;
+      .menu_icon {
+        padding-right: 30px;
+        font-size: 24px;
+      }
+      .logo {
+        img {
+          height: 56px;
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      .search_group {
+        display: flex;
+        position: relative;
+        margin-right: 5px;
+        align-items: center;
+        &:hover {
+          input {
+            display: block;
+          }
+        }
+        .icon {
+          justify-content: end;
+          z-index: 2;
+          cursor: pointer;
+        }
+
+        input {
+          padding: 5px 10px;
+          border: none;
+          border-bottom: 1px #ebebeb solid;
+          width: 200px;
+          color: #3b3a3a;
+          outline: none;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          display: none;
+        }
+      }
+      .bag {
+        position: relative;
+        .icon {
+          font-size: 35px;
+          padding-right: 8px;
+          color: #c7c8cb;
+        }
+        .noti {
+          position: absolute;
+          background-color: #cf1d32;
+          color: white;
+          width: 16px;
+          height: 16px;
+          border-radius: 9999px;
+          font-size: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          right: 20%;
+        }
+      }
+      .icon {
+        font-size: 35px;
+        padding-right: 8px;
+        color: #c7c8cb;
+      }
+    }
+  }
+}

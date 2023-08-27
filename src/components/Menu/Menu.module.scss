@@ -1,0 +1,135 @@
+.container {
+  position: fixed;
+  z-index: 1;
+  height: calc(100% - 78px);
+  top: 76px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.371);
+
+  .modalLayer {
+    height: 100%;
+    width: 100%;
+    .menu {
+      height: 100%;
+      width: 240px;
+      background-color: #fff;
+      padding-bottom: 20px;
+      position: relative;
+
+      float: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .category {
+        display: flex;
+        flex-direction: column;
+      }
+      .contact_group {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .cart_wrapper {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      top: 0px;
+      right: 0;
+      max-width: 340px;
+      width: 100%;
+      background-color: #fff;
+      height: calc(100%);
+      .product_wrapper {
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+      .action_group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 95px;
+        width: 100%;
+        border-top: 1px solid #00000030;
+        padding: 10px;
+        .total_group {
+          display: flex;
+          justify-content: space-between;
+          p {
+            &:last-child {
+              font-weight: 700;
+            }
+          }
+        }
+        button {
+          width: 100%;
+          height: 40px;
+          font-size: 16px;
+          color: white;
+          background-color: #cf1d32;
+          border-radius: 5px;
+          border-color: transparent;
+          &:hover {
+            background-color: #000;
+          }
+        }
+      }
+    }
+    .personal {
+      height: 100%;
+      width: 240px;
+      background-color: #fff;
+      padding-bottom: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      float: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .category {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+.link {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 16px;
+  color: #000;
+  &:hover {
+    background-color: #f2f2f3;
+    .subMenu {
+      display: flex;
+    }
+  }
+
+  .subMenu {
+    display: none;
+    top: 0;
+    position: absolute;
+    left: 240px;
+    width: 240px;
+    flex-direction: column;
+    bottom: 0;
+    background-color: #f2f2f3;
+  }
+}
+.subLink {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 16px;
+  color: #000;
+  background-color: #f2f2f3;
+  &:hover {
+    background-color: #fff;
+  }
+}

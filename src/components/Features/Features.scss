@@ -1,0 +1,19 @@
+.features-img-wrapper {
+  overflow: hidden;
+  img {
+    &:hover {
+      animation: zoomIn 2s ease-in-out;
+    }
+  }
+}
+@keyframes zoomIn {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1.2;
+  }
+}

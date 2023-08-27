@@ -1,0 +1,15 @@
+.section-title {
+  font-weight: 700;
+  color: #41454f;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    height: 5px;
+    width: 50%;
+    left: 5%;
+
+    background-color: #41454f;
+  }
+}

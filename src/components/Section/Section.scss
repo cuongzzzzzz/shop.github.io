@@ -1,0 +1,22 @@
+.my-section-title {
+  font-weight: 700;
+  color: #41454f;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    height: 5px;
+    width: 50%;
+    left: 12px;
+
+    background-color: #41454f;
+  }
+}
+.my-filter-group {
+  &:last-child {
+    .my-splash {
+      display: none;
+    }
+  }
+}

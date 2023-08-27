@@ -1,0 +1,74 @@
+.my-position {
+  position: sticky;
+  top: 76px;
+}
+.my-btn {
+  width: 40px;
+  height: 40px;
+  background: #f2f2f3;
+  border-color: transparent;
+}
+
+.quantity-btn {
+  border: #f2f2f3 solid 1px;
+  background-color: transparent;
+  width: 60px;
+  height: 40px;
+  color: black;
+}
+.my-add-cart-btn,
+.my-buy-btn {
+  height: 60px;
+  width: 180px;
+  border-radius: 5px;
+}
+
+.my-add-cart-btn {
+  background-color: #41454f;
+  color: white;
+  text-transform: capitalize;
+  border-color: transparent;
+  &:hover {
+    background-color: rgb(210, 38, 38);
+  }
+}
+.my-add-wish-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+.my-tab {
+  position: relative;
+  color: #c7c8cb;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background-color: #41454f;
+    display: none;
+  }
+  &:hover {
+    &::after {
+      display: block;
+    }
+  }
+}
+.my-tab.active {
+  position: relative;
+  color: #41454f;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background-color: #41454f;
+    display: block;
+  }
+}

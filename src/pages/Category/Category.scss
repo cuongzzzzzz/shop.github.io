@@ -1,0 +1,68 @@
+.my-filter-title {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    bottom: -10px;
+    left: 0;
+  }
+}
+.my-nav {
+  .nav-item {
+    &:hover {
+      .dropdown {
+        display: block;
+      }
+    }
+
+    .link-group {
+      &:hover {
+        .dot,
+        .my-category-link {
+          color: rgb(208, 0, 0);
+        }
+      }
+      .my-category-link {
+        color: white;
+        text-decoration: none;
+      }
+      .active-category-link {
+        color: rgb(208, 0, 0);
+        text-decoration: none;
+      }
+    }
+    .dropdown {
+      display: none;
+      .dropdown-item {
+        .link-group {
+          &:hover {
+            .dot1,
+            .my-category-link1 {
+              color: rgb(208, 0, 0);
+            }
+          }
+        }
+        .my-category-link1 {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.filter-bar {
+  position: relative;
+  .my-filter-box {
+    position: absolute;
+    top: 0;
+    border: 1px solid #000;
+    width: 150px;
+  }
+}
+.filter-box {
+  border: 1px solid #000;
+  width: 150px;
+}
